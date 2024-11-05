@@ -7,8 +7,8 @@
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2_ros/transform_broadcaster.h>
 
-#include "RTPacket.h"
-#include "RTProtocol.h"
+#include "qualisys_cpp_sdk/RTPacket.h"
+#include "qualisys_cpp_sdk/RTProtocol.h"
 
 /**
  * @brief Global namespace of the package.
