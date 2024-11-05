@@ -6,7 +6,7 @@
 
 int main(int argc, char* argv[]) {
   // Classic definition of the node.
-  ros::init(argc, argv, "ros-qualisys", ros::init_options::NoSigintHandler);
+  ros::init(argc, argv, "ros_qualisys", ros::init_options::NoSigintHandler);
 
   // Here it says that the namespace of the Node can be overwritten by the
   // launcher
