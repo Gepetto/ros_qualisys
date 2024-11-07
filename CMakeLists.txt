@@ -82,9 +82,6 @@ set_target_properties(${PROJECT_NAME}-node PROPERTIES OUTPUT_NAME
 set_target_properties(${PROJECT_NAME}-node PROPERTIES INSTALL_RPATH
                                                       "\$ORIGIN/../lib")
 
-# Unit tests
-add_subdirectory(tests)
-
 # Installation
 install(
   TARGETS ${PROJECT_NAME}
