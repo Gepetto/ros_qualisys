@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 set(PROJECT_NAMESPACE gepetto)
 set(PROJECT_NAME ros-qualisys)
 set(PROJECT_DESCRIPTION
-    "ROS wrapper around the https://github.com/qualisys/qualisys_cpp_sdk package. See README.md."
+    "ROS wrapper around the qualisys_cpp_sdk package. See README.md."
 )
 set(PROJECT_URL https://github.com/${PROJECT_NAMESPACE}/${PROJECT_NAME})
 
@@ -21,7 +21,8 @@ if(NOT EXISTS "${CMAKE_SOURCE_DIR}/cmake/base.cmake")
   if(${CMAKE_VERSION} VERSION_LESS "3.14.0")
     message(
       FATAL_ERROR
-        "\nPlease run the following command first:\ngit submodule update --init\n"
+        "\nPlease run the following command first:\n"
+        "git submodule update --init\n"
     )
   else()
     include(FetchContent)
