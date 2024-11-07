@@ -4,8 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 set(PROJECT_NAMESPACE gepetto)
 set(PROJECT_NAME ros-qualisys)
 set(PROJECT_DESCRIPTION
-    "ROS wrapper around the qualisys_cpp_sdk package. See README.md."
-)
+    "ROS wrapper around the qualisys_cpp_sdk package. See README.md.")
 set(PROJECT_URL https://github.com/${PROJECT_NAMESPACE}/${PROJECT_NAME})
 
 # Project options
@@ -19,11 +18,8 @@ set(CUSTOM_HEADER_DIR ${PROJECT_NAME})
 set(JRL_CMAKE_MODULES "${CMAKE_CURRENT_LIST_DIR}/cmake")
 if(NOT EXISTS "${CMAKE_SOURCE_DIR}/cmake/base.cmake")
   if(${CMAKE_VERSION} VERSION_LESS "3.14.0")
-    message(
-      FATAL_ERROR
-        "\nPlease run the following command first:\n"
-        "git submodule update --init\n"
-    )
+    message(FATAL_ERROR "\nPlease run the following command first:\n"
+                        "git submodule update --init\n")
   else()
     include(FetchContent)
     FetchContent_Declare(
@@ -43,8 +39,12 @@ compute_project_args(PROJECT_ARGS LANGUAGES CXX)
 project(${PROJECT_NAME} ${PROJECT_ARGS})
 
 # Define the README file as the main page.
-set(DOXYGEN_INPUT "${DOXYGEN_INPUT} \"${PROJECT_SOURCE_DIR}/README.md\" \"${PROJECT_SOURCE_DIR}/package.xml\"" CACHE STRING " ")
-set(DOXYGEN_USE_MDFILE_AS_MAINPAGE "\"${PROJECT_SOURCE_DIR}/README.md\"" CACHE STRING " ")
+set(DOXYGEN_INPUT
+    "${DOXYGEN_INPUT} \"${PROJECT_SOURCE_DIR}/README.md\" \"${PROJECT_SOURCE_DIR}/package.xml\""
+    CACHE STRING " ")
+set(DOXYGEN_USE_MDFILE_AS_MAINPAGE
+    "\"${PROJECT_SOURCE_DIR}/README.md\""
+    CACHE STRING " ")
 
 # Project dependencies
 find_package(qualisys_cpp_sdk REQUIRED)
